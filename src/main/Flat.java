@@ -3,19 +3,19 @@ import java.util.*;
 import java.util.Scanner;
 import computation.Comput;
 import interfaces.Info;
-public class Flat extends House{
+public class Flat {
     private int square;  // площадь
     private int roomer; // количество комнат
     private int number; // номер квартиры
     private int floor; // этаж
 
-    public Flat() {
+    public Flat(int square,int roomer,int number,int floor) {
         Scanner num = new Scanner(System.in);
-        System.out.println("введите площадь, количество комнат, номер квартиры,этаж и количество людей\n");
-        this.square = num.nextInt();
-        this.roomer = num.nextInt();
-        this.number = num.nextInt();
-        this.floor = num.nextInt();
+        System.out.println("введите площадь, количество комнат, номер квартиры\n");
+        this.square = square;
+        this.roomer = roomer ;
+        this.number = number;
+        this.floor = floor;
     }
     Flat(String empty) {
     }
@@ -23,10 +23,9 @@ public class Flat extends House{
         System.out.println("квартира" + this.number + sign + "квартира" + apartmentNumber);
     }
     public void compareBy(Flat apartment) {
-
         String sign = new String("");
 
-        System.out.println("Площадь :");
+        System.out.println("Площадь");
         sign = Comput.getSign(this.square, apartment.square);
         printCompareResult(sign, apartment.number);
 
@@ -41,12 +40,10 @@ public class Flat extends House{
         System.out.println("Этаж");
         sign = Comput.getSign(this.floor, apartment.floor);
         printCompareResult(sign, apartment.number);
-
     }
     public void printInfo1 () {
         Info.printInfo_flat(number, square, roomer, floor);
     }
-
     public int getSquare() {
         return square;
     }

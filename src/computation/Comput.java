@@ -27,4 +27,14 @@ public class Comput {
         }
         return i + 1;
     }
+    public static int FloorCountFlat(int x) {
+        x =-2;
+        int i=0;
+        for (int y=0;x >= 3;y++)
+        {
+            x=-3;
+            i=y;
+        }
+        return i+1;
+    }
 }
